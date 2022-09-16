@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { doMergeSortMain } from "../sortingAlgorithms/sortingAlgorithms";
 import "./SortingVisualizer.css";
 
 const SortingVisualizer = () => {
@@ -14,11 +15,15 @@ const SortingVisualizer = () => {
       a.push(getRandomNumber(5, 730));
     }
     setArray(a);
-    console.log(array);
   };
+
   useEffect(() => {
     resetArray();
   }, []);
+
+  const mergeSort = () => {
+    doMergeSortMain(array);
+  };
 
   return (
     <>
@@ -32,12 +37,21 @@ const SortingVisualizer = () => {
             ></div>
           );
         })}
+      </div>
+      <div className="button-container">
         <button
           onClick={() => {
             resetArray();
           }}
         >
           Generate New Array
+        </button>
+        <button
+          onClick={() => {
+            mergeSort();
+          }}
+        >
+          Call Merge Sort
         </button>
       </div>
     </>

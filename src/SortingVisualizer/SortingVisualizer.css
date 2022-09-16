@@ -1,6 +1,11 @@
 .array-container {
-  position: absolute;
-  left: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  /* align-items: center; */
+  /* position: absolute; */
+  /* left: 100px; */
+  border: 2px solid red;
   /* right: 100px; */
 }
 .array-bar {
@@ -8,4 +13,9 @@
   background-color: pink;
   display: inline-block;
   margin: 0 1px;
+}
+.button-container {
+  display: flex;
+  justify-content: center;
+  padding: 5px;
 }
