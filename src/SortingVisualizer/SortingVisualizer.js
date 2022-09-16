@@ -22,7 +22,33 @@ const SortingVisualizer = () => {
   }, []);
 
   const mergeSort = () => {
-    doMergeSortMain(array);
+    const animations = doMergeSortMain(array);
+    const newAnimations = [];
+    for (const animation of animations) {
+      newAnimations.push(animation.comparison);
+      newAnimations.push(animation.comparison);
+      newAnimations.push(animation.swap);
+    }
+    for (let i = 0; i < newAnimations.length; i++) {
+      const arrayBars = document.getElementsByClassName("array-bar");
+      const [barOneIdx, barTwoIdx] = newAnimations[i];
+      const barOneStyle = arrayBars[barOneIdx].style;
+      const barTwoStyle = arrayBars[barTwoIdx].style;
+      const isColorChange = i % 3 !== 2;
+      if (isColorChange) {
+        const color = i % 3 === 0 ? "red" : "turquoise";
+        setTimeout(() => {
+          barOneStyle.backgroundColor = color;
+          barTwoStyle.backgroundColor = color;
+        }, i * 10);
+      } else {
+        setTimeout(() => {
+          const [barOneIdx, newHeight] = newAnimations[i];
+          const barOneStyle = arrayBars[barOneIdx].style;
+          barOneStyle.height = `${newHeight}px`;
+        }, i * 10);
+      }
+    }
   };
 
   return (

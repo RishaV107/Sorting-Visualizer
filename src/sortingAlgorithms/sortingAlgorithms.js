@@ -1,10 +1,9 @@
 export const doMergeSortMain = (array) => {
   const animations = [];
   if (array.length <= 1) return array;
-  console.log(array);
   const auxolaryArray = array.slice();
   doMergeSort(auxolaryArray, 0, array.length - 1, animations);
-  console.log(auxolaryArray);
+  return animations;
 
   //test-algo
   // const a = [7, 3, 4, 1, 2, 6, 5];
