@@ -4,12 +4,6 @@ export const doMergeSortMain = (array) => {
   const auxolaryArray = array.slice();
   doMergeSort(auxolaryArray, 0, array.length - 1, animations);
   return animations;
-
-  //test-algo
-  // const a = [7, 3, 4, 1, 2, 6, 5];
-  // console.log(a);
-  // doMergeSort(a, 0, a.length - 1, animations);
-  // console.log(a);
 };
 
 const doMergeSort = (mainArray, startIdx, endIdx, animations) => {

@@ -1,10 +1,10 @@
 .array-container {
-  /* display: flex; */
-  /* justify-content: center; */
-  /* align-items: flex-end; */
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
   /* align-items: center; */
-  position: absolute;
-  left: 100px;
+  /* position: absolute;
+  left: 100px; */
   border: 2px solid red;
   /* right: 100px; */
 }
@@ -14,8 +14,8 @@
   display: inline-block;
   margin: 0 1px;
 }
-/* .button-container {
+.button-container {
   display: flex;
   justify-content: center;
   padding: 5px;
-} */
+}
